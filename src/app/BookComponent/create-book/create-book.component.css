@@ -1,0 +1,23 @@
+.text-crimson {
+    color: crimson;
+  }
+  .text-ruby-red {
+    color: #e0115f;
+  }
+  
+  #bookTitleLabel, #bookAuthorLabel, #bookPriceLabel {
+    font-size: 1.5rem;   /* Increases the font size */
+    font-weight: bold;   /* Makes the label bold */
+    color: #e0115f;       /* Optional: Changes the color */
+    margin-bottom: 8px;  /* Adds some space below the label */
+}
+  /* Custom styles for input placeholders */
+::placeholder {
+  font-size: 1.2rem;  /* Increase placeholder font size */
+  color: #e0115f;     /* Optional: Make the color more visible */
+  opacity: 1;         /* Ensure color is fully applied */
+}
+.form-control {
+  font-size: 1.2rem;    /* Increases font size for inputs */
+  padding: 10px;        /* Adds padding inside the input field */
+}

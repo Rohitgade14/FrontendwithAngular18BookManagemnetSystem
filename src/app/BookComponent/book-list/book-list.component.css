@@ -1,0 +1,74 @@
+/* Container Styling */
+.container {
+  margin: 20px auto;
+  max-width: 900px;
+  font-family: 'Roboto', sans-serif; /* Apply the Google font */
+}
+
+/* Heading */
+h2.text-center {
+  color: #007bff; /* Primary color */
+  font-weight: 500;
+}
+
+/* Text Colors */
+.text-crimson {
+  color: crimson; /* Crimson color */
+}
+
+.text-ruby-red {
+  color: #e0115f; /* Ruby Red color */
+}
+
+/* Table Styling */
+.table {
+  background-color: #f9f9f9;
+}
+
+.table thead th {
+  color: crimson; /* Use .text-crimson for header */
+  font-weight: 600;
+  text-align: center;
+}
+
+.table tbody td {
+  color: #e0115f; /* Ruby Red for book details */
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Button Styles */
+.btn-info {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.btn-info:hover,
+.btn-danger:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* Pagination Control Styling */
+pagination-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-controls a {
+  color: #007bff;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.pagination-controls .disabled {
+  color: #6c757d;
+}

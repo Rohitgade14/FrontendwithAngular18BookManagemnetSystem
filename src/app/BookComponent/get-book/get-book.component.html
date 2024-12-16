@@ -1,0 +1,12 @@
+<div *ngIf="loading" class="loading">Loading book details...</div>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<div *ngIf="!loading && book">
+  <h2>Book Details</h2>
+  <p class="text-crimson"><strong>Title:</strong> {{ book.title }}</p>
+  <p  class="text-crimson"><strong>Author:</strong> {{ book.author }}</p>
+  <p  class="text-crimson"><strong>Price:</strong> {{ book.price | currency }}</p>
+  <button (click)="goBack()"  class="text-crimson" class="btn btn-secondary">Back to Books List</button>
+  <button (click)="downloadPDF()" class="text-crimson btn btn-primary">Download PDF</button>
+</div>
+

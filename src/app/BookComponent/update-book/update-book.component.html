@@ -1,0 +1,88 @@
+<div class="container">
+  <h2 class="text-crimson">Update Book</h2>
+  <button class="btn btn-secondary mt-4" (click)="goBack()">Back</button>
+
+  <form (ngSubmit)="onUpdate()" #bookForm="ngForm">
+    <!-- Book ID (readonly) -->
+    <div class="form-group text-crimson">
+      <label for="id">Book ID</label>
+      <input
+        id="id"
+        type="text"
+        [value]="bookId"
+        class="form-control"
+        readonly
+      />
+    </div>
+
+    <!-- Book Title -->
+    <div class="form-group text-crimson">
+      <label for="title">Title</label>
+      <input
+        id="title"
+        type="text"
+        [(ngModel)]="book.title"
+        name="title"
+        class="form-control"
+        required
+        #bookTitle="ngModel"
+      />
+      <div *ngIf="bookTitle.invalid && bookTitle.touched" class="text-danger">
+        Title is required.
+      </div>
+    </div>
+
+    <!-- Book Author -->
+    <div class="form-group text-crimson">
+      <label for="author">Author</label>
+      <input
+        id="author"
+        type="text"
+        [(ngModel)]="book.author"
+        name="author"
+        class="form-control"
+        required
+        #bookAuthor="ngModel"
+      />
+      <div *ngIf="bookAuthor.invalid && bookAuthor.touched" class="text-danger">
+        Author is required.
+      </div>
+    </div>
+
+    <!-- Book Price -->
+    <div class="form-group text-crimson">
+      <label for="price">Price</label>
+      <input
+        id="price"
+        type="number"
+        [(ngModel)]="book.price"
+        name="price"
+        class="form-control"
+        required
+        min="0"
+        max="99999999"
+        step="0.01"
+        [ngModelOptions]="{ updateOn: 'blur' }"
+        #bookPrice="ngModel"
+      />
+      <div *ngIf="bookPrice.invalid && bookPrice.touched" class="text-danger">
+        <div *ngIf="bookPrice.errors?.['required']">Price is required.</div>
+        <div *ngIf="bookPrice.errors?.['min']">Price must be a positive number.</div>
+        <div *ngIf="bookPrice.errors?.['max']">Price is too large.</div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid">Update Book</button>
+
+    <!-- Success Message -->
+    <div *ngIf="bookUpdateSuccess" class="alert alert-success mt-2">
+      Book Updated Successfully!
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger mt-2">
+      {{ errorMessage }}
+    </div>
+  </form>
+</div>

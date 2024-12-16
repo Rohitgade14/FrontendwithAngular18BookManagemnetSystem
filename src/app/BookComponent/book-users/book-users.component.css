@@ -1,0 +1,23 @@
+/* Text Colors */
+.text-crimson {
+  color: crimson; /* Bright red color */
+}
+
+.text-ruby-red {
+  color: crimson; /* Same as text-crimson, consider merging if not distinct */
+}
+
+/* Button Styling */
+.btn-blue {
+  background-color: blue;       /* Blue background for the button */
+  color: rgb(255, 0, 149);      /* Bright pinkish color for the button text */
+  padding: 10px 15px;           /* Add some padding for better appearance */
+  border: none;                 /* Remove any default border */
+  border-radius: 5px;           /* Rounded corners */
+  cursor: pointer;              /* Pointer cursor to indicate it's clickable */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.btn-blue:hover {
+  background-color: darkblue;   /* Darker blue on hover */
+}

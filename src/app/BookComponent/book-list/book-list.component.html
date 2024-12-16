@@ -1,0 +1,40 @@
+<div class="container">
+  <h2 class="text-center text-primary mt-4">Book List</h2>
+
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th class="text-crimson">ID</th>
+        <th class="text-crimson">Title</th>
+        <th class="text-crimson">Author</th>
+        <th class="text-crimson">Price</th>
+        <th class="text-crimson">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+        <td class="text-ruby-red">{{ book.id }}</td>
+        <td class="text-ruby-red">{{ book.title }}</td>
+        <td class="text-ruby-red">{{ book.author }}</td>
+        <td class="text-ruby-red">{{ book.price }}</td>
+        <td>
+          <button (click)="viewBook(book.id)" class="btn btn-info" style="margin-right: 10px;" >
+            <span class="material-icons">visibility</span> 
+          </button>
+          <button (click)="editBook(book.id)" class="btn btn-info" style="margin-right: 10px; ">
+            <span class="material-icons">edit</span> 
+          </button>
+          <button (click)="deleteBook(book.id)" class="btn btn-danger" style="margin-right: 10px;">
+            <span class="material-icons">delete</span> 
+          </button>
+          <button (click)="viewUsers(book.id)" class="btn btn-info" style="margin-right: 10px;" >
+            <span class="material-icons">people</span> Users
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination controls -->
+  <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>

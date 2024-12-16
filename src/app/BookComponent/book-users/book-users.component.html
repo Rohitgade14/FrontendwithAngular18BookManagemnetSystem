@@ -1,0 +1,42 @@
+<div class="container">
+  <h2 class="text-center text-primary mt-4">Users for Book ID: {{ bookId }}</h2>
+  
+  <!-- Back Button -->
+  <button class="btn-blue" (click)="goBack()">Back</button>
+
+  <!-- Loading Spinner -->
+  <div *ngIf="loading" class="text-center mt-4">
+    <p>Loading users...</p>
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage && !loading" class="alert alert-danger mt-4 text-center" aria-live="assertive">
+    {{ errorMessage }}
+  </div>
+
+  <!-- No Users Found Message -->
+  <div *ngIf="!loading && noUsersFound && !errorMessage" class="text-center mt-4">
+    <p>No users found for this book.</p>
+  </div>
+
+  <!-- User Table -->
+  <table *ngIf="!loading && users.length > 0 && !errorMessage" class="table table-striped mt-3 table-responsive">
+    <thead>
+      <tr>
+        <th class="text-crimson">Name</th> 
+        <th class="text-crimson">Email</th> 
+        <th class="text-crimson">Location</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td class="text-ruby-red">{{ user.name }}</td> 
+        <td class="text-ruby-red">{{ user.email }}</td> 
+        <td class="text-ruby-red">{{ user.location }}</td> 
+      </tr>
+    </tbody>
+  </table>
+</div>

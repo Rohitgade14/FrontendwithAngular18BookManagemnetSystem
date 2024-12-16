@@ -1,0 +1,17 @@
+.text-crimson {
+    color: crimson;
+  }
+  .btn-blue {
+    background-color: blue;
+    color: white;  
+  }
+  .footer {
+   
+    bottom: 0;
+    width: 100%;
+    background-color: orangered;
+    padding: 5px 0; /* Reduce padding */
+    text-align: center;
+    font-size: 0.85rem; /* Optional: reduce font size */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}

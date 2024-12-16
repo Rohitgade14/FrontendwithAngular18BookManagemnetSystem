@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>Delete Book</h2>
+    
+    <!-- Confirmation Dialog -->
+    <div *ngIf="showConfirmDialog" class="alert alert-warning">
+      <p>Are you sure you want to delete the book with ID: {{ bookId }}?</p>
+      <button (click)="confirmDelete()" class="btn btn-danger">Confirm Delete</button>
+      <button (click)="cancelDelete()" class="btn btn-secondary">Cancel</button>
+    </div>
+  
+    <!-- Success Message -->
+    <div *ngIf="deleteSuccess" class="alert alert-success mt-2">
+      Book deleted successfully!
+    </div>
+  
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger mt-2">
+      {{ errorMessage }}
+    </div>
+  </div>
+  

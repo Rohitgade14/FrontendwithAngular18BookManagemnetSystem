@@ -1,0 +1,40 @@
+/* Center the form and add a background color */
+body {
+  background-color: #f8f9fa; /* Light gray background */
+}
+
+/* Customize the card appearance */
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #ffffff; /* White background */
+  border: none;
+}
+
+/* Add spacing to the form fields */
+.form-control {
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #007bff; /* Bootstrap primary color */
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Customize error alert */
+.alert-danger {
+  font-size: 14px;
+}
+
+/* Headings */
+.text-primary {
+  font-weight: 700;
+  font-size: 24px;
+}

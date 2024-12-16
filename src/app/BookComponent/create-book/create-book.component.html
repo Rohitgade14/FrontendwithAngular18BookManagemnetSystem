@@ -1,0 +1,71 @@
+<h1 class="text-center text-crimson">Create Book</h1>
+
+<div class="text-center text-ruby-red col-md-8 offset-md-2">
+    <div *ngIf="bookCreate" class="alert alert-success">
+        Book Account Created Successfully!!!!
+    </div>
+
+    <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+        
+        <!-- Book Title -->
+        <div class="form-group">
+            <label for="bookTitle" id="bookTitleLabel">Book Title</label>
+            <input
+                type="text"
+                id="bookTitle"
+                class="form-control"
+                name="bookTitle"
+                placeholder="Enter book title"
+                [(ngModel)]="book.title"
+                required
+                #bookTitle="ngModel" />
+            <div *ngIf="bookTitle.invalid && bookTitle.touched" class="text-danger">
+                Book title is required.
+            </div>
+        </div> 
+
+        <!-- Book Author -->
+        <div class="form-group">
+            <label for="bookAuthor" id="bookAuthorLabel">Book Author</label>
+            <input
+                type="text"
+                id="bookAuthor"
+                class="form-control"
+                name="bookAuthor"
+                placeholder="Enter book author"
+                [(ngModel)]="book.author"
+                required
+                #bookAuthor="ngModel" />
+            <div *ngIf="bookAuthor.invalid && bookAuthor.touched" class="text-danger">
+                Book author is required.
+            </div>
+        </div>
+
+        <!-- Book Price -->
+        <div class="form-group">
+            <label for="bookPrice" id="bookPriceLabel">Book Price</label>
+            <input
+                type="number"
+                id="bookPrice"
+                class="form-control"
+                name="bookPrice"
+                placeholder="Enter book price"
+                [(ngModel)]="book.price"
+                required
+                step="0.01"
+                min="0"
+                max="999999.99"
+                #bookPrice="ngModel" />
+            <div *ngIf="bookPrice.invalid && bookPrice.touched" class="text-danger">
+                <div *ngIf="bookPrice.errors?.['required']">Book price is required.</div>
+                <div *ngIf="bookPrice.errors?.['step']">Please enter a valid price (numbers only, up to two decimal places).</div>
+                <div *ngIf="bookPrice.errors?.['min']">Price cannot be negative.</div>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-success" [disabled]="bookForm.invalid">Submit</button>
+    </form>
+</div>

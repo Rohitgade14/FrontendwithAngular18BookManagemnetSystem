@@ -1,0 +1,36 @@
+<div class="container my-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white text-center">
+      <h2 class="mb-0">Download Book PDF</h2>
+    </div>
+    <div class="card-body">
+      <!-- Book ID input field with label -->
+      <div class="form-group mb-4">
+        <label for="bookIdInput" class="form-label fw-bold">Enter Book ID</label>
+        <input 
+          type="number" 
+          id="bookIdInput" 
+          class="form-control" 
+          [(ngModel)]="bookId" 
+          placeholder="Enter Book ID" 
+        />
+      </div>
+
+      <!-- Download PDF button -->
+      <div class="text-center">
+        <button 
+          (click)="downloadPdf()" 
+          class="btn btn-primary btn-lg px-4 py-2" 
+          [disabled]="!bookId"
+        >
+          <i class="fas fa-file-pdf me-2"></i> Download PDF
+        </button>
+      </div>
+
+      <!-- Error message display -->
+      <div *ngIf="errorMessage" class="alert alert-danger mt-4 text-center">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+</div>
